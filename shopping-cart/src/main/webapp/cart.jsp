@@ -15,7 +15,7 @@ if (auth != null) {
 ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
 List<Cart> cartProduct = null;
 if (cart_list != null) {
-	ProductDao pDao = new ProductDao(DbCon.getConnection());
+	ProductDao pDao = new ProductDao(DBCon.getConnection());
 	cartProduct = pDao.getCartProducts(cart_list);
 	double total = pDao.getTotalCartPrice(cart_list);
 	request.setAttribute("total", total);
